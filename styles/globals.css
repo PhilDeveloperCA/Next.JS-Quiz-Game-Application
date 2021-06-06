@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+table, tr, th, td {
+  border: 2px solid black;
+  width: 100%;
+  text-align: left;
+  vertical-align: auto;
+  border-collapse: collapse;
+  table-layout: auto;
+}
