@@ -13,11 +13,21 @@ type Points =  {
 
 //intialize categories later -> 
 
-export default function AddQuestion({categories}){
+export default function AddQuestion({categories,id}){
     const question_title = useRef<string>('');
     const question_points = useRef<Points[]>();
-    
     const [questions, setQuestions] = useState<Question[]>([]);
+
+    const submitQuestions = () => {
+        //axios post 
+        fetch(`/api/quiz/${id}/questions`, {method:"POST"})
+        .then(res => {
+            
+        })
+        .catch(err=> {
+
+        })
+    }
 
     const questionForm = (
          questions.map(question => {
@@ -71,6 +81,7 @@ export const getServerSideProps = async (context) => {
     return {
         props: {
             categories,
+            id,
         }
     }
 }
